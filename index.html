@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>calculator</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      margin: 0;
+
+    }
+    .calculator{
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin:0;
+      max-width: 400px;
+      border:solid 1px #ccc;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      border-radius: 5px;
+      margin-top:40px;
+     
+
+    }
+    #result{
+      width:100%;
+      padding:10px;
+      font-size:24px;
+      border:none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3) inset;
+      border-radius: 5px;
+       margin-bottom: 20px;
+    }
+    .buttons{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap:10px;
+
+    }
+    button{
+      padding: 10px;
+      font-size: 24px;
+      border: none;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3 ease;
+
+    }
+    button:hover{
+      background-color: #ddd;
+    }
+    .clear{
+      background-color: red;
+      color:white;
+    }
+    .number{
+      background-color: white;
+    }
+    .number.decimal{
+      background-color: #fff;
+      color:#333
+    }
+    .oprator{
+      background-color: blue;
+      color :white;
+
+    }
+    .equals{
+      background-color: #01ff70;
+      grid-row:span 3;
+      color:#fff;
+
+    }
+
+  </style>
+</head> 
+<body>
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <div class="buttons">
+       <button  class="clear">c</button>
+       <button  class="oprator">/</button>
+       <button  class="oprator">*</button>
+       <button  class="oprator">-</button>
+       
+       <button  class="number">7</button>
+       <button  class="number">8</button>
+       <button  class="number">9</button>
+       <button  class="oprator">+</button>
+       <button  class="number">4</button>
+       <button  class="number">5</button>
+       <button  class="number">6</button>
+       <button  class="equals">=</button>
+       <button  class="number">1</button>
+       <button  class="number">2</button>
+       <button  class="number">3</button>
+       <button  class="number">0</button>
+       <button  class="decimal">.</button>
+    </button>
+<script>
+const buttonsE1=document.querySelectorAl("button");
+const inputfieldE1=document.getElementByI("result");
+
+for(let i=0;i<buttonsE1.length;i++){
+  buttonsE1[i].addEventListenner("click",()=>{
+    const buttonValu=buttonsE1[i].textContent;
+    if(buttonValu==="c"){
+      clearResult();
+    }
+    else if(buttonValu==="="){
+      calcluteResult();
+    }
+    else{
+     appendValu(buttonValu);
+    }
+  })
+}
+function clearResult(){
+
+}
+
+function appendValu(buttonValu){
+  inputfieldE1.valu+=buttonValu
+
+}
+function calcluteResult(){
+ inputFieldE1.valu=eval(inputfieldE1.valu);
+}
+</script>
+  </div>
+</body>
+</html>
